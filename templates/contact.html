@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - Sri Lanka Design Solutions{% endblock %}
+
+{% block content %}
+<section class="contact-section">
+    <div class="container">
+        <h1 class="text-center">Contact for Design Services</h1>
+        <p class="text-center">Get a quote for 3D modeling, CAD design, or architectural visualization</p>
+        
+        <div class="contact-container">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h2>📬 Get in Touch</h2>
+                <p>Contact our design studio in Oluvil, Sri Lanka</p>
+                
+                <div class="info-cards">
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Our Studio</h4>
+                        <p>Oluvil, Sri Lanka</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <h4>Call for Quote</h4>
+                        <p>+94 757232425</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <h4>Working Hours</h4>
+                        <p>Mon - Sat: 9AM - 6PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="contact-form-card">
+                <h2>📝 Request Design Quote</h2>
+                <form method="POST" action="{{ url_for('contact') }}" class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service Needed</label>
+                        <select id="service" name="service" class="form-control">
+                            <option value="">Select a service</option>
+                            <option value="3d-modeling">3D Modeling & Visualization</option>
+                            <option value="cad-design">Architectural CAD Design</option>
+                            <option value="quantity-survey">Quantity Surveying</option>
+                            <option value="product-design">Product/Industrial Design</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Project Details *</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Describe your project requirements..." required></textarea>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <button type="submit" class="btn btn-send">
+                            <i class="fas fa-paper-plane"></i> Send Request
+                        </button>
+                        <p class="form-note">* Required fields. We'll respond within 24 hours.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.contact-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    margin-top: 40px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+
+.contact-info {
+    padding: 40px;
+    background: #4a6bff;
+    color: white;
+}
+
+.info-cards {
+    margin-top: 30px;
+}
+
+.info-card {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.info-card i {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.contact-form-card {
+    padding: 40px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4a6bff;
+}
+
+.form-control {
+    background: white;
+    cursor: pointer;
+}
+
+.btn-send {
+    background: #4a6bff;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-send:hover {
+    background: #3a5bef;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(74, 107, 255, 0.3);
+}
+
+.form-note {
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    const email = document.getElementById('email').value;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (!emailPattern.test(email)) {
+        e.preventDefault();
+        alert('Please enter a valid email address.');
+        return false;
+    }
+    
+    // Show loading
+    const submitBtn = this.querySelector('.btn-send');
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    submitBtn.disabled = true;
+});
+</script>
+{% endblock %}

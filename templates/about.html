@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - Sri Lanka Design Solutions{% endblock %}
+
+{% block content %}
+<section class="about">
+    <div class="container">
+        <h1>About Sri Lanka Design Solutions</h1>
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Our Professional Journey</h2>
+                <p>Based in Oluvil, Sri Lanka, we specialize in professional 3D modeling, CAD design, and architectural visualization services. With 10 years of international experience, we bring global standards to Sri Lankan projects.</p>
+                
+                <p>Our expertise includes architectural CAD designs, 3D visualization using Blender, quantity surveying, and product design for both local and international clients.</p>
+                
+                <h3>📍 Our Sri Lankan Office</h3>
+                <div class="location-details">
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Oluvil, Sri Lanka</p>
+                    <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +94 757232425</p>
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> ifolforme@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> <strong>Business Hours:</strong> Mon-Sat: 9AM - 6PM (IST)</p>
+                </div>
+            </div>
+            <div class="about-stats">
+                <div class="stat">
+                    <h3>10+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat">
+                    <h3>200+</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat">
+                    <h3>50+</h3>
+                    <p>Happy Clients</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.about {
+    padding: 60px 0;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.about-text h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.location-details {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 30px;
+    border-left: 4px solid #4a6bff;
+}
+
+.location-details p {
+    margin: 12px 0;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.location-details i {
+    color: #4a6bff;
+    width: 20px;
+}
+
+.about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stat {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.stat h3 {
+    font-size: 36px;
+    color: #4a6bff;
+    margin-bottom: 10px;
+}
+
+.stat p {
+    color: #666;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{% endblock %}

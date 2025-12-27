@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block title %}Our Services - Sri Lanka Design Solutions{% endblock %}
+
+{% block content %}
+<section class="services">
+    <div class="container">
+        <h1>Professional Design Services</h1>
+        <p class="subtitle">Expert 3D modeling, CAD design, and architectural solutions</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-cube"></i>
+                </div>
+                <h3>3D Modeling & Visualization Artist</h3>
+                <p>Expert in Blender + CAD for architectural visualization, product modeling, and realistic rendering.</p>
+                <a href="/contact" class="btn-small">Get Quote</a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-drafting-compass"></i>
+                </div>
+                <h3>Architectural/Engineering CAD Designer</h3>
+                <p>Professional CAD designs for architecture, engineering plans, and construction documentation.</p>
+                <a href="/contact" class="btn-small">Get Quote</a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <h3>Quantity Surveyor</h3>
+                <p>Construction cost estimation, bill of quantities, and project budgeting for Sri Lankan projects.</p>
+                <a href="/contact" class="btn-small">Get Quote</a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-industry"></i>
+                </div>
+                <h3>Product/Industrial Designer</h3>
+                <p>CAD + Blender for product prototyping, industrial design, and manufacturing-ready models.</p>
+                <a href="/contact" class="btn-small">Get Quote</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.services {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.services h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    background: #eef2ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.service-icon i {
+    font-size: 30px;
+    color: #4a6bff;
+}
+
+.service-card h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.service-card p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.btn-small {
+    display: inline-block;
+    background: #4a6bff;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-small:hover {
+    background: #3a5bef;
+}
+</style>
+{% endblock %}
